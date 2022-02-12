@@ -112,8 +112,11 @@ body {
 .history-span {
   position: absolute;
   right: 20px;
-  padding: 1px;
   cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
 .calc-screen {
@@ -167,7 +170,6 @@ body {
 }
 
 .calc-popup {
-  overflow: hidden;
   display: none;
   position: absolute;
   top: 0px;
@@ -191,6 +193,9 @@ body {
   cursor: pointer;
 }
 .calc-popup .popup-content__history {
+  height: 95%;
+  overflow-y: auto;
+  overflow-x: hidden;
   text-align: right;
   position: absolute;
   bottom: 15px;

@@ -21,9 +21,7 @@ function allClear() {
 
 document.querySelector('.calc').
 addEventListener('click', (event) => {
-    if (event.target.classList.contains('history-span')) {
-        console.log('ok');
-    }
+    if (event.target.classList.contains('history-span')) {}
     if (event.target.classList.contains('ac')) {
         allClear();
     }
@@ -54,7 +52,6 @@ addEventListener('click', (event) => {
                 out.textContent = b;
             }
         }
-        console.log(a, sign, b);
         return;
     }
 
@@ -122,13 +119,12 @@ observer.observe(out, { childList: true });
 const popupHistory = document.querySelector('.calc-popup');
 let popupContainer = document.querySelector('.popup-content__history');
 const popupHistoryClose = document.querySelector('.popup-content__close');
-// historyArr
 
 function addToHistory(a) {
     historyArr.push({ result: a });
 }
 
-function renderHistory(result) {
+function renderHistory(container) {
     popupContainer.innerHTML = '';
     historyArr.forEach(num => {
         popupContainer.innerHTML +=
@@ -136,6 +132,7 @@ function renderHistory(result) {
            <p>${num.result}</p>
             `
     })
+    popupContainer.scrollTop = popupContainer.scrollHeight;
 }
 
 history.addEventListener('click', function() {
@@ -146,9 +143,3 @@ history.addEventListener('click', function() {
 popupHistoryClose.addEventListener('click', function() {
     popupHistory.style.display = "none";
 })
-
-
-
-// let date = new Date().toLocaleDateString() + ' at ' +
-//     new Date().toLocaleTimeString();
-// console.log(date);
