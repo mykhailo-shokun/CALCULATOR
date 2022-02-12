@@ -6,6 +6,7 @@
     @@include('html/header.html',{})
 
     <div class="calc">
+        <span id="history" class="history-span"></span>
         <div class="calc-screen">
             <p>0</p>
         </div>
@@ -34,7 +35,24 @@
             <div class="btn dot">.</div>
             <div class="btn equal bg-orange">=</div>
         </div>
+
+        <div class="calc-popup">
+            <div class="calc-popup__content popup-content">
+                <div class="popup-content__title">
+                    <h2>history</h2>
+                </div>
+                <span class="popup-content__close">&times;</span>
+                <div class="popup-content__history">
+                    <p>result history 1</p>
+                    <p>result history 2</p>
+                    <p>result history 3</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
     @@include('html/footer.html',{})
     <script src="js/app.min.js"></script>

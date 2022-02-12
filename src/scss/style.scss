@@ -9,6 +9,7 @@ body {
 }
 
 .calc {
+    position: relative;
     margin: 50px auto;
     width: 300px;
     height: 500px;
@@ -16,7 +17,14 @@ body {
     background: #000;
     color: #fff;
     padding: 18px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: #00000040 0px 54px 55px, #0000001f 0px -12px 30px, #0000001f 0px 4px 6px, #0000002b 0px 12px 13px, #00000017 0px -3px 5px;
+}
+
+.history-span {
+    position: absolute;
+    right: 20px;
+    padding: 1px;
+    cursor: pointer;
 }
 
 .calc-screen {
@@ -27,11 +35,9 @@ body {
     justify-content: flex-end;
     margin-bottom: 20px;
     p {
-        // overflow: hidden;
         text-align: right;
         font-size: 44px;
         margin: 0;
-        // width: 100%;
     }
 }
 
@@ -68,5 +74,44 @@ body {
         grid-area: zero;
         width: 100%;
         border-radius: 35px;
+    }
+}
+
+.calc-popup {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 20px;
+    padding: 10px;
+    .popup-content {
+        &__title {
+            opacity: .5;
+            cursor: default;
+        }
+        &__close {
+            position: absolute;
+            left: 10px;
+            bottom: 5px;
+            font-size: 50px;
+            opacity: .5;
+            cursor: pointer;
+        }
+        &__history {
+            text-align: right;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            p {
+                margin-top: 5px;
+                cursor: default;
+            }
+        }
     }
 }
